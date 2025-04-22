@@ -1,0 +1,436 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('Fuentes/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+:root {
+    --strongColor: #ffba03;
+    --whiteColor: #ffffff;
+    --blackColor: #000000;
+    --greyColor: #3b3b3b;
+    --primaryFont: "Open Sans", Sans-serif;
+    --secondaryFont: "Roboto", sans-serif;
+    --smallTitleFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+    --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+    --bodyFontSize: 1rem;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+a {
+    all: unset;
+}
+
+button {
+    all: unset;
+}
+
+img {
+    width: 100%;
+}
+
+* {
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+header {
+    font-family: var(--headerFontSize);
+    font-size: var(--headerFontSize);
+    color: var(--strongColor);
+}
+
+body {
+    margin: 0;
+    font-family: var(--secondaryFont);
+    font-size: var(--bodyFontSize);
+    color: var(--greyColor);
+}
+
+.common-padding {
+    max-width: 90rem;
+    padding: 0 16px;
+}
+
+h1, h2, h3, .small-title {
+    font-family: var(--primaryFont);
+    text-transform: uppercase;
+    margin: 1rem auto;
+    font-weight: 900;
+}
+
+p {
+    line-height: 1.75rem;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    z-index: 10000;
+    width: 100%;
+    margin: 0 auto;
+    font-family: var(--headerFontSize);
+    font-size: var(--headerFontSize);
+    color: var(--strongColor);
+    align-content: center;
+    box-shadow: 0 -6px 16px var(--blackColor);
+    background-color: var(--whiteColor);
+}
+
+header::before {
+    content: "";
+    width: 100%;
+    position: absolute;
+    height: 0vh;
+    background-color: #00000099;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    top: 0;
+    right: 0;
+    z-index: -11;
+    transform: height 0.3s, opacity 0.3s;
+    transition: opacity 0.3s ease-in-out;
+}
+
+header.active::before {
+    height: 150vh;
+    opacity: 1;
+}
+
+#header-padding {
+    width: 100%;
+}
+
+
+.header-div-top {
+    width: 100%;
+    margin: 0;
+    padding: clamp(0.75rem, 2vw, 1.5rem);
+    display: flex;
+    justify-content: space-between;
+    gap: 4vw;
+    align-items: center;
+    height: 4rem;
+    line-height: 0;
+    background-color: var(--whiteColor);
+}
+
+.header-div-logo-container {
+    max-width: 40%;
+    text-align: left;
+    margin: 0;
+    cursor: pointer;
+}
+
+.header-div-logo-container img {
+    border-radius: 0;
+    height: 3rem;
+}
+
+.header-div-logo-container img {
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    margin-top: 10px;
+    margin-left: 2px;
+    height: auto;
+    transition: all 0.5s ease-in-out;
+}
+
+#hamburguer-menu-icon {
+    max-width: 20%;
+    min-width: 42px;
+    display: block;
+    cursor: pointer;
+    margin: 0;
+}
+
+#hamburguer-menu-icon.active {
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    max-width: 8vw;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--strongColor);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+#hamburguer-menu-icon.active .bar:nth-child(1) {
+    opacity: 0;
+}
+
+#hamburguer-menu-icon.active .bar:nth-child(2) {
+    transform: translateY(4px) rotate(45deg);
+}
+
+#hamburguer-menu-icon.active .bar:nth-child(3) {
+    transform: translateY(-4px) rotate(-45deg);
+}
+
+nav {
+    font-size: 1.125rem;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--whiteColor);
+    top: 0vh;
+    left: 0;
+    gap: 0;
+    z-index: -1;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-100%);
+}
+
+nav.active {
+    transform: translateY(10%);
+    transition-delay: .2s;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    padding: 12vh 0;
+}
+
+nav ul li {
+    font-family: var(--primaryFont);
+    font-size: 1.25rem;
+    color: var(--strongColor);
+    list-style-type: none;
+    cursor: pointer;
+}
+
+main {
+    padding-top: clamp(4vh, 4rem, 42vh);
+}
+
+section {
+    background-color: var(--whiteColor);
+}
+
+#section-statement {
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+    background-image: url("Imágenes/porton-foto-3.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#div-galeria {
+    padding: 1rem 0;
+    overflow-x: auto;
+}
+
+.scroll-container {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.li-galeria {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    width: 80vw; /* Adjust for how much of the screen you want each image to take */
+    max-width: 300px;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.li-galeria {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+iframe {
+    max-width: 100%;
+}
+
+footer {
+    background-color: var(--strongColor);
+    color: var(--whiteColor);
+}
+
+footer .section-padding {
+    padding-bottom: 0;
+}
+
+footer a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#footer-div-top-logo {
+    margin: 0;
+    padding: 1rem 0;
+    max-width: 144px;
+    height: auto;
+    align-self: left;
+    border-radius: 0;
+}
+
+#footer-div-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding-bottom: 1rem;
+}
+
+.footer-section {
+    text-align: left;
+    margin: 1rem 0;
+}
+
+footer h4 {
+    line-height: 2rem;
+}
+
+footer ul li {
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+#footer-top-seguinos ul {
+    display: flex;
+    gap: clamp(4%, 1.25rem, 8%);
+    align-content: center;
+}
+
+.social-media-link svg {
+    width: 2rem;
+    height: auto;
+}
+
+.social-media-link path {
+    fill: var(--whiteColor);
+}
+
+footer hr {
+    color: initial;
+}
+
+#footer-p-copyright {
+    max-width: none;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.wsp-flotante {
+    width: 82px;
+    height: 82px;
+    cursor: pointer;
+    border-radius: 60px;
+    border: none;
+    background-color: #25D366;
+    position: fixed;
+    bottom: 20px;
+    right: 0;
+    translate: -30% 0;
+    z-index: 90;
+    display: grid;
+    place-content: center;
+    transition: all 0.3s;
+    padding: 0.75rem;
+    box-shadow: 0px 0px 6px rgb(99, 99, 99);
+}
+
+.wsp-flotante svg {
+    width: 100%;
+    height: auto;
+}
+
+.wsp-flotante svg path {
+    fill: var(--whiteColor);
+}
+
+@media (min-width: 996px) {
+    #header-padding {
+        width: 100%;
+        max-width: 90rem;
+        max-width: 110rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 6rem;
+        z-index: 1000;
+    }
+
+    .header-div-top {
+        padding: 0;
+        height: initial;
+    }
+
+    .header-div-logo-container {
+        max-width: 150px;
+    }
+
+    .header-div-logo-container img {
+        position: absolute;
+        width: 112px;
+        top: 0;
+        bottom: 0;
+        margin-top: 14px;
+        height: auto;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .header-div-logo-container img.visible {
+        scale: 1.05;
+    }
+
+    #hamburguer-menu-icon {
+        display: none;
+    }
+
+    nav {
+        position: initial;
+        top: initial;
+        left: initial;
+        transform: none;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: right;
+        align-items: center;
+        gap: 5rem;
+        margin: 0;
+        padding: 0;
+        padding-right: 36px;
+    }
+
+    nav ul li {
+        font-size: 1.25rem;
+        margin: 0;
+    }
+
+    .common-padding {
+        padding: clamp(4vh, 2rem, 42vh) 4% 6rem;
+    }
+}
