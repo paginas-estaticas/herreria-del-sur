@@ -18,6 +18,10 @@
     --bodyFontSize: 1rem;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 ul {
     list-style-type: none;
     padding: 0;
@@ -65,6 +69,20 @@ h1, h2, h3, .small-title {
     font-weight: 900;
 }
 
+h2 {
+    margin-top: 0;
+    font-size: 2rem;
+}
+
+h2, h3 {
+    color: var(--blackColor);
+}
+
+.small-title {
+    margin: 0;
+    color: gray;
+}
+
 p {
     line-height: 1.75rem;
 }
@@ -79,7 +97,7 @@ header {
     margin: 0 auto;
     font-family: var(--headerFontSize);
     font-size: var(--headerFontSize);
-    color: var(--strongColor);
+    color: var(--blackColor);
     align-content: center;
     box-shadow: 0 -6px 16px var(--blackColor);
     background-color: var(--whiteColor);
@@ -119,13 +137,13 @@ header.active::before {
     justify-content: space-between;
     gap: 4vw;
     align-items: center;
-    height: 4rem;
+    height: 4.5rem;
     line-height: 0;
-    background-color: var(--whiteColor);
+    background-color: var(--strongColor);
 }
 
 .header-div-logo-container {
-    max-width: 40%;
+    max-width: 100%;
     text-align: left;
     margin: 0;
     cursor: pointer;
@@ -134,16 +152,7 @@ header.active::before {
 .header-div-logo-container img {
     border-radius: 0;
     height: 3rem;
-}
-
-.header-div-logo-container img {
     width: 100%;
-    top: 0;
-    bottom: 0;
-    margin-top: 10px;
-    margin-left: 2px;
-    height: auto;
-    transition: all 0.5s ease-in-out;
 }
 
 #hamburguer-menu-icon {
@@ -163,10 +172,13 @@ header.active::before {
     max-width: 8vw;
     height: 3px;
     margin: 5px auto;
-    background-color: var(--strongColor);
+    background-color: var(--blackColor);
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
+}html {
+    scroll-behavior: smooth;
 }
+
 
 #hamburguer-menu-icon.active .bar:nth-child(1) {
     opacity: 0;
@@ -204,20 +216,53 @@ nav.active {
 nav ul {
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
     padding: 12vh 0;
+    margin: 0;
+    text-align: left;
 }
 
 nav ul li {
     font-family: var(--primaryFont);
     font-size: 1.25rem;
-    color: var(--strongColor);
+    font-weight: 900;
+    color: var(--blackColor);
     list-style-type: none;
     cursor: pointer;
+    padding: 1rem 2rem;
+    margin: 0;
+}
+
+nav hr {
+    color: lightgrey;
+    width: 100%;
+    height: 1px;
 }
 
 main {
+    position: relative;
+    text-align: center;
     padding-top: clamp(4vh, 4rem, 42vh);
+    background-image: url(Imágenes/ega-beneficios.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+main::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.53);
+    z-index: 1;
+}
+
+main > * {
+    position: relative;
+    z-index: 10;
 }
 
 section {
@@ -225,12 +270,178 @@ section {
 }
 
 #section-statement {
-    padding-top: 4rem;
-    padding-bottom: 6rem;
+    padding-bottom: 0rem;
+}
+
+#section-statement .common-padding {
+    position: relative;
+    padding-top: 6rem;
+    padding-bottom: 24rem;
     background-image: url("Imágenes/porton-foto-3.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    height: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+#section-statement .common-padding::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.53);
+    z-index: 1;
+}
+
+#section-statement .common-padding > * {
+    position: relative;
+    color: var(--whiteColor);
+    z-index: 10;
+}
+
+#section-statement h1 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    word-wrap: break-word;
+}
+
+#section-statement p {
+    max-width: 20ch;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2.25rem;
+}
+
+.div-double-button-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;   
+}
+
+.call-to-action, .info-button, .a-contacto {
+    all: unset;
+    font-family: var(--primaryFont);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    border-radius: 32px;
+    text-transform: uppercase;
+    cursor: pointer;
+    height: fit-content;
+}
+
+.call-to-action, .a-contacto {
+    padding: 1rem 2rem;
+    color: var(--blackColor);
+    background-color: var(--strongColor);
+}
+
+.call-to-action:hover {
+    background-color: #ffc82f;
+}
+
+#section-statement .call-to-action {
+    padding: 0 2rem;
+}
+
+#section-servicios .common-padding {
+    padding: 2rem 0 3rem;
+}
+
+#section-servicios .text-container:first-child {
+    padding-top: 3rem;
+}
+
+#section-servicios ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.li-servicio p {
+    max-width: 90%;
+}
+
+.svg-container {
+    margin: 1rem auto;
+    padding: 2rem;
+    background-color: var(--strongColor);
+    border-radius: 200px;
+    width: fit-content;
+}
+
+.li-servicio svg {
+    max-width: 3rem;
+    height: auto;
+}
+
+
+.info-button {
+    padding: 0 1.5rem;
+    color: var(--whiteColor);
+}
+
+#section-nosotros {
+    padding-bottom: 2rem;
+    background-color: #f9f9f9;
+}
+
+#section-nosotros .common-padding {
+    padding-bottom: 2rem;
+}
+
+#section-nosotros p {
+    margin-bottom: 0.5rem;
+}
+
+#section-nosotros .button-container {
+    margin: 2rem 0 1rem;
+}
+
+#section-nosotros img {
+    margin: 2rem 0;
+}
+
+#section-beneficios {
+    color: var(--whiteColor);
+    background: none;
+    padding: 4rem 0 6rem;
+}
+
+#section-beneficios h2 {
+    color: var(--whiteColor);
+    max-width: 10ch;
+}
+
+#section-beneficios ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.li-beneficio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dynamic-number {
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.li-beneficio-text {
+    font-size: 1.25rem;
+}
+
+#section-galeria .common-padding {
+    padding: 5rem 0 3rem;
 }
 
 #div-galeria {
@@ -257,7 +468,6 @@ section {
     scroll-snap-align: center;
     width: 80vw; /* Adjust for how much of the screen you want each image to take */
     max-width: 300px;
-    border-radius: 1rem;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
@@ -268,13 +478,70 @@ section {
     display: block;
 }
 
+#section-contacto h2,
+#section-contacto h3,
+#section-contacto p {
+    color: var(--whiteColor);
+}
+
+#section-contacto .common-padding {
+    padding: 0;
+}
+
+#section-contacto .text-container {
+    background-image: url(Imágenes/ega-contacto.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 6rem 2rem;
+}
+
+#ul-medios-de-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 1rem 0;
+}
+
+#ul-medios-de-contacto p {
+    margin-top: 1rem;
+}
+
+.div-medio-de-contacto-titulo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.div-medio-de-contacto-titulo h3 {
+    margin: 0;
+}
+
+.div-medio-de-contacto-titulo svg {
+    max-width: 2rem;
+    max-height: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+#media-contacto-wpp {
+    scale: 0.8;
+}
+
+.div-medio-de-contacto-titulo svg path {
+    fill: var(--whiteColor);
+}
+
 iframe {
     max-width: 100%;
 }
 
 footer {
+    padding-top: 2rem;
     background-color: var(--strongColor);
-    color: var(--whiteColor);
+    color: var(--blackColor);
 }
 
 footer .section-padding {
@@ -289,7 +556,6 @@ footer a:hover {
 #footer-div-top-logo {
     margin: 0;
     padding: 1rem 0;
-    max-width: 144px;
     height: auto;
     align-self: left;
     border-radius: 0;
@@ -303,7 +569,7 @@ footer a:hover {
 }
 
 .footer-section {
-    text-align: left;
+    text-align: center;
     margin: 1rem 0;
 }
 
@@ -318,6 +584,7 @@ footer ul li {
 
 #footer-top-seguinos ul {
     display: flex;
+    justify-content: center;
     gap: clamp(4%, 1.25rem, 8%);
     align-content: center;
 }
@@ -328,7 +595,7 @@ footer ul li {
 }
 
 .social-media-link path {
-    fill: var(--whiteColor);
+    fill: var(--blackColor);
 }
 
 footer hr {
@@ -352,7 +619,7 @@ footer hr {
     bottom: 20px;
     right: 0;
     translate: -30% 0;
-    z-index: 90;
+    z-index: 10000;
     display: grid;
     place-content: center;
     transition: all 0.3s;
