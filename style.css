@@ -719,6 +719,10 @@ footer hr {
 }
 
 @media (min-width: 996px) {
+    header {
+        background-color: var(--strongColor);
+    }
+
     #header-padding {
         width: 100%;
         max-width: 90rem;
@@ -737,15 +741,15 @@ footer hr {
 
     .header-div-logo-container {
         max-width: 150px;
+        width: 40%;
     }
 
     .header-div-logo-container img {
-        position: absolute;
-        width: 112px;
+        position: initial;
+        width: auto;
         top: 0;
         bottom: 0;
-        margin-top: 14px;
-        height: auto;
+        margin-top: 0;
         transition: all 0.5s ease-in-out;
     }
 
@@ -762,24 +766,170 @@ footer hr {
         top: initial;
         left: initial;
         transform: none;
+        background-color: var(--strongColor);
+        width: 60%;
     }
 
     nav ul {
         flex-direction: row;
         justify-content: right;
         align-items: center;
-        gap: 5rem;
+        gap: 4rem;
         margin: 0;
         padding: 0;
         padding-right: 36px;
     }
 
     nav ul li {
-        font-size: 1.25rem;
+        font-size: 1rem;
         margin: 0;
+    }
+
+    nav hr {
+        display: none;
     }
 
     .common-padding {
         padding: clamp(4vh, 2rem, 42vh) 4% 6rem;
+    }
+
+    .bg-layer {
+        background-size: 80%;
+    }
+
+    #section-statement .common-padding {
+        padding-top: 8rem;
+        height: 650px;
+        background-size: 50%;
+    }
+
+    #section-statement h1 {
+        font-size: 4rem;
+        max-width: 18ch;
+    }
+
+    #section-servicios .common-padding {
+        padding-top: 0;
+    }
+
+    #section-servicios .text-container:first-child {
+        padding-top: 8rem;
+    }
+
+    #section-statement p {
+        max-width: 30ch;
+    }
+
+    #section-servicios ul {
+        flex-direction: row;
+        padding: 3rem 0;
+    }
+
+    .li-servicio p {
+        max-width: 70%;
+    }
+
+    .li-servicio svg {
+        max-width: 3rem;
+    }
+
+    #section-nosotros .common-padding {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 4rem;
+        align-items: center;
+        text-align: left;
+    }
+
+    #section-nosotros img {
+        max-width: 50%;
+    }
+
+    h2 {
+        font-size: 3rem;
+        line-height: 3.25rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    .small-title {
+        font-size: 1.125rem;
+    }
+
+    #section-beneficios ul {
+        flex-direction: row;
+        padding: 2rem 0;
+    }
+
+    #section-beneficios {
+        padding-bottom: 1rem;
+    }
+
+    #section-contacto h2 {
+        font-size: 1.75rem;
+    }
+
+    #section-contacto h3 {
+        font-size: 1.125rem;
+    }
+
+    .div-medio-de-contacto-titulo svg {
+        max-width: 1.25rem;
+        max-height: 1.25rem;
+    }
+
+    #contacto-flex-content {
+        display: flex;
+        justify-content: center; /* Center contents horizontally */
+        align-items: center;     /* Center contents vertically (optional) */
+        margin: 0 auto;
+        padding: 4rem 10% 4rem;
+    }
+
+    #contacto-flex-content .text-container {
+        flex: 0 1 40%;
+        max-width: 40%;
+        box-sizing: border-box;
+        padding: 2rem;
+    }
+      
+    #contacto-flex-content iframe {
+        margin: 0;
+        padding: 0;
+        flex: 0 1 60%;
+        max-width: 60%;
+        box-sizing: border-box;
+    }
+
+    footer .common-padding {
+        padding-bottom: 0;
+    }
+
+    #footer-div-top {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    #footer-div-top-logo {
+        max-width: 30%;
+    }
+
+    .footer-section {
+        text-align: left;
+    }
+
+    #footer-top-seguinos ul {
+        text-align: left;
+    }
+
+    footer hr {
+        display: none;
+        border: solid 1px rgb(61, 61, 61);
+        width: 70%;
     }
 }
