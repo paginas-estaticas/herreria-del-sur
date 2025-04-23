@@ -351,6 +351,26 @@ section {
     text-shadow: 0 0 24px black;
 }
 
+.moving-text {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 1s ease-in-out;
+}
+
+.moving-text.visible {
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+.fade-in-element {
+    opacity: 0;
+    transition: all 2s ease-in-out;
+}
+
+.fade-in-element.visible {
+    opacity: 1;
+}
+
 .div-double-button-container {
     display: flex;
     justify-content: center;
@@ -399,6 +419,14 @@ section {
     gap: 1rem;
 }
 
+.li-servicio.moving-text {
+    transform: translateY(25%);
+}
+
+.li-servicio.moving-text.visible {
+    transform: translateY(0%);
+}
+
 .li-servicio p {
     max-width: 90%;
 }
@@ -443,6 +471,14 @@ section {
     margin: 2rem 0;
 }
 
+#section-nosotros .text-container.moving-text {
+    transform: translateY(10%);
+}
+
+#section-nosotros .text-container.moving-text.visible {
+    transform: translateY(0%);
+}
+
 #section-beneficios {
     color: var(--whiteColor);
     background: none;
@@ -467,7 +503,7 @@ section {
 }
 
 .dynamic-number {
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: 900;
 }
 
@@ -480,7 +516,7 @@ section {
 }
 
 #div-galeria {
-    padding: 1rem 0;
+    padding: 2rem 0;
     overflow-x: auto;
 }
 
@@ -496,6 +532,17 @@ section {
 
 .scroll-container::-webkit-scrollbar {
     display: none;
+}
+
+@keyframes scrollHint {
+    0%   { transform: translateX(0); }
+    30%  { transform: translateX(-20px); }
+    60%  { transform: translateX(0); }
+    100% { transform: translateX(0); }
+}
+
+.scroll-hint {
+animation: scrollHint 1.5s ease-out 2s;
 }
 
 .li-galeria {
