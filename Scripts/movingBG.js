@@ -4,7 +4,7 @@ const imageUrls = [
     'Imágenes/porton-foto-4.jpg'
   ];
   
-  const images = imageUrls.map(url => `url("${url}")`);
+  const bgImages = imageUrls.map(url => `url("${url}")`);
   
   // Preload images
   imageUrls.forEach(src => {
@@ -23,7 +23,7 @@ const imageUrls = [
   function crossFadeBackground() {
   const next = (current + 1) % 2;
 
-  layers[next].style.backgroundImage = images[index];
+  layers[next].style.backgroundImage = bgImages[index];
 
   // Prepare incoming layer
   layers[next].style.transform = 'scale(1)';
@@ -40,7 +40,7 @@ const imageUrls = [
     }, 100); // match fade duration
 
     current = next;
-    index = (index + 1) % images.length;
+    index = (index + 1) % bgImages.length;
   }, 20);
 };
 
