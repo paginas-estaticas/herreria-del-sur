@@ -1,7 +1,7 @@
 const imageUrls = [
-    'Imágenes/porton-foto-3.jpg',
-    'Imágenes/porton-foto-1.jpg',
-    'Imágenes/porton-foto-4.jpg'
+    'Imágenes/Herreria/herreria-image-6.webp',
+    'Imágenes/Herreria/herreria-image-1.webp',
+    'Imágenes/Herreria/herreria-image-2.webp'
   ];
   
   const bgImages = imageUrls.map(url => `url("${url}")`);

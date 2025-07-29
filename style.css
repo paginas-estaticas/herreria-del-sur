@@ -242,7 +242,6 @@ main {
     position: relative;
     text-align: center;
     padding-top: clamp(4vh, 4rem, 42vh);
-    background-image: url(Imágenes/ega-beneficios.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -484,8 +483,10 @@ section {
 
 #section-beneficios {
     color: var(--whiteColor);
-    background: none;
     padding: 4rem 0 6rem;
+    background-image: url(Imágenes/Herreria/herreria-image-7.webp);
+    background-position: center;
+    background-attachment: fixed;
 }
 
 #section-beneficios h2 {
@@ -695,8 +696,8 @@ iframe {
 
 footer {
     padding-top: 2rem;
-    background-color: var(--strongColor);
-    color: var(--blackColor);
+    background-color: var(--blackColor);
+    color: var(--whiteColor);
 }
 
 footer .section-padding {
@@ -705,7 +706,8 @@ footer .section-padding {
 
 footer a:hover {
     cursor: pointer;
-    text-decoration: underline;
+    color: var(--strongColor);
+    transition: all 0.2s ease;
 }
 
 #footer-div-top-logo {
@@ -750,7 +752,12 @@ footer ul li {
 }
 
 .social-media-link path {
-    fill: var(--blackColor);
+    fill: var(--whiteColor);
+}
+
+.social-media-link svg:hover path {
+    fill: var(--strongColor);
+    transition: all 0.2s ease;
 }
 
 footer hr {
@@ -816,6 +823,7 @@ footer hr {
     .header-div-logo-container img {
         position: initial;
         width: auto;
+        height: 3rem;
         top: 0;
         bottom: 0;
         margin-top: 0;
