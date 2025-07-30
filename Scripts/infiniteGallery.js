@@ -1,58 +1,38 @@
+const mediaQuery = window.matchMedia('(min-width: 996px)');
 
-document.addEventListener('DOMContentLoaded', () => {
-  const container = document.getElementById('infinite-gallery');
-  const items = Array.from(container.children);
-  const itemWidth = items[0].offsetWidth + parseInt(getComputedStyle(items[0]).marginRight);
+function initializeGallery() {
+    const gallery = document.getElementById('ul-self-scroll');
+    const items = gallery.querySelectorAll('li');
+    const numItems = items.length;
+    let scrollSpeed = 1; // Adjust the scroll speed here
 
-  // Clone original items and append to the end
-  items.forEach(item => {
-    const clone = item.cloneNode(true);
-    clone.setAttribute('aria-hidden', 'true');
-    container.appendChild(clone);
-  });
+    // Duplicate the images and append them after the original items
+    items.forEach(item => {
+        gallery.appendChild(item.cloneNode(true));
+    });
 
-  // Infinite scroll logic
-  container.addEventListener('scroll', () => {
-    const scrollLimit = itemWidth * items.length;
-    if (container.scrollLeft >= scrollLimit) {
-      container.scrollLeft -= scrollLimit;
+    // Function to move the gallery
+    function moveGallery() {
+        gallery.scrollLeft += scrollSpeed;
+
+        // Check if the first set of images has fully scrolled out of view
+        if (gallery.scrollLeft >= gallery.scrollWidth / 2) {
+            gallery.scrollLeft = 0; // Jump back to the start, creating the seamless loop
+        }
     }
-  });
 
-  // ✅ Modal logic below
-  const modal = document.getElementById('imageModal');
-  const modalImg = document.getElementById('modalImg');
-  const closeBtn = document.querySelector('.close');
+    // Move gallery every 30ms
+    setInterval(moveGallery, 10);
+}
 
-  // ✅ Function to open modal with image
-  function openModal(src) {
-    modal.style.display = 'flex';
-    modalImg.src = src;
-  }
+// Initialize gallery if the media query matches
+if (mediaQuery.matches) {
+    initializeGallery();
+}
 
-  // ✅ Event delegation: Listen on the container and filter clicks on <img>
-  container.addEventListener('click', (event) => {
-    if (event.target.tagName === 'IMG') {
-      openModal(event.target.src);
+// Add listener to handle window resizing
+mediaQuery.addEventListener('change', (e) => {
+    if (e.matches) {
+        initializeGallery();  // Initialize gallery when viewport width >= 996px
     }
-  });
-
-  // Close modal on close button
-  closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-  });
-
-  // Close modal on clicking background
-  modal.addEventListener('click', (event) => {
-    if (event.target === modal) {
-      modal.style.display = 'none';
-    }
-  });
-
-  // Close modal on Esc key
-  window.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-      modal.style.display = 'none';
-    }
-  });
 });

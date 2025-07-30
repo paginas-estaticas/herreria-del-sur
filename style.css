@@ -7,7 +7,8 @@
   }
 
 :root {
-    --strongColor: #ff7b00;
+    --strongColor: #ffbf00;
+    --secondaryColor: #ff6f00;
     --whiteColor: #ffffff;
     --blackColor: #000000;
     --greyColor: #3b3b3b;
@@ -100,7 +101,7 @@ header {
     color: var(--blackColor);
     align-content: center;
     box-shadow: 0 -6px 16px var(--blackColor);
-    background-color: var(--whiteColor);
+    background-color: var(--strongColor);
 }
 
 header::before {
@@ -139,7 +140,7 @@ header.active::before {
     align-items: center;
     height: 4.5rem;
     line-height: 0;
-    background-color: var(--whiteColor);
+    background-color: var(--strongColor);
 }
 
 .header-div-logo-container {
@@ -392,7 +393,7 @@ section {
 .call-to-action, .a-contacto {
     padding: 1rem 2rem;
     color: var(--blackColor);
-    background-color: var(--strongColor);
+    background-color: var(--secondaryColor);
 }
 
 .call-to-action {
@@ -400,7 +401,7 @@ section {
 }
 
 .call-to-action:hover {
-    background-color: #e64d00;
+    background-color: #fc8505;
 }
 
 #section-statement .call-to-action {
@@ -526,27 +527,15 @@ section {
 
 .scroll-container {
     display: flex;
-    gap: 1rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+    gap: 1rem;   
+    overflow: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    position: relative;
 }
 
 .scroll-container::-webkit-scrollbar {
     display: none;
-}
-
-@keyframes scrollHint {
-    0%   { transform: translateX(0); }
-    30%  { transform: translateX(-20px); }
-    60%  { transform: translateX(0); }
-    100% { transform: translateX(0); }
-}
-
-.scroll-hint {
-animation: scrollHint 1.5s ease-out 2s;
 }
 
 .li-galeria {
@@ -844,6 +833,7 @@ footer hr {
         left: initial;
         transform: none;
         width: 60%;
+        background-color: var(--strongColor);
     }
 
     nav ul {
