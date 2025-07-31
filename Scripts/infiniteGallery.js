@@ -1,4 +1,4 @@
-const mediaQuery = window.matchMedia('(min-width: 996px)');
+const mediaQuery = window.matchMedia('(min-width: 0px)');
 
 function initializeGallery() {
     const gallery = document.getElementById('ul-self-scroll');

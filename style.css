@@ -303,12 +303,11 @@ section {
     position: relative;
     color: var(--whiteColor);
     padding-top: 6rem;
-    padding-bottom: 24rem;
+    padding-bottom: 2rem;
     background-image: none;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 500px;
     width: 100%;
     text-align: center;
     z-index: 20;
@@ -335,15 +334,15 @@ section {
 
 #section-statement h1 {
     margin-bottom: 1rem;
-    font-size: 2rem;
+    font-size: 2.5rem;
     word-wrap: break-word;
 }
 
 #section-statement p {
     max-width: 20ch;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 600;
-    line-height: 2.25rem;
+    line-height: 1.5rem;
 }
 
 #section-statement h1,
@@ -864,14 +863,25 @@ footer hr {
     }
 
     #section-statement .common-padding {
+        display: flex;
+        flex-direction: column;
         padding-top: 8rem;
         height: 650px;
         background-size: 50%;
+        text-align: left;
+    }
+
+    #div-statement-h1 {
+        margin-left: 0;
     }
 
     #section-statement h1 {
-        font-size: 4rem;
-        max-width: 18ch;
+        font-size: 3rem;
+        max-width: 24ch;
+    }
+
+    #section-statement p, #section-statement .div-double-button-container {
+        margin-left: 0;
     }
 
     #section-servicios .common-padding {
@@ -883,7 +893,7 @@ footer hr {
     }
 
     #section-statement p {
-        max-width: 30ch;
+        max-width: 30%;
     }
 
     #section-servicios ul {
