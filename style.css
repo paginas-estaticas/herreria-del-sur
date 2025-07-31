@@ -801,6 +801,7 @@ footer hr {
     .header-div-top {
         padding: 0;
         height: initial;
+        background-color: transparent;
     }
 
     .header-div-logo-container {
@@ -866,6 +867,7 @@ footer hr {
         display: flex;
         flex-direction: column;
         padding-top: 8rem;
+        width: 90%;
         height: 650px;
         background-size: 50%;
         text-align: left;
