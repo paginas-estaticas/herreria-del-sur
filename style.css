@@ -622,6 +622,10 @@ section {
     padding: 0;
 }
 
+#contacto-flex-content .text-container {
+    background-color: black;
+}
+
 #section-contacto h2,
 #section-contacto h3,
 #section-contacto p {
